@@ -148,6 +148,22 @@ nav {
     text-shadow: 0 0 8px var(--primary);
 }
 
+.lang-btn {
+    font-family: var(--font-mono);
+    color: var(--primary) !important;
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: var(--primary);
+    color: #000 !important;
+    box-shadow: 0 0 10px var(--primary);
+}
+
 .cta-small {
     padding: 0.5rem 1.2rem;
     background: rgba(0, 243, 255, 0.1);
@@ -523,10 +539,17 @@ nav {
     background: linear-gradient(135deg, rgba(10, 10, 18, 0.9), rgba(20, 20, 30, 0.9));
     border: 1px solid var(--primary);
     box-shadow: 0 0 30px rgba(0, 243, 255, 0.1);
+    /* Flexbox for perfect centering */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    /* Add consistent logic for spacing */
 }
 
 .contact-card h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     color: var(--primary);
 }
 
