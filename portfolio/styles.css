@@ -737,3 +737,209 @@ footer {
         display: none;
     }
 }
+
+/* ==========================================
+   TECH ANIMATION OVERDRIVE (2026 EDITION)
+   ========================================== */
+
+/* 1. Moving Cyber Grid Animation */
+@keyframes gridMove {
+    0% {
+        background-position: 0 0, 0 0;
+    }
+    100% {
+        background-position: 50px 50px, 50px 50px;
+    }
+}
+
+body {
+    animation: gridMove 25s linear infinite;
+}
+
+/* 2. Cyberpunk Glitch Effect for Hero Title */
+.glitch {
+    position: relative;
+    color: #fff;
+    text-shadow: 2px 2px 0px rgba(0, 243, 255, 0.2);
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-dark);
+    clip: rect(0, 0, 0, 0); /* Hidden by default, animated in */
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--primary);
+    animation: glitch-anim 4s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 var(--accent), 0 0 8px rgba(188, 19, 254, 0.6);
+    animation: glitch-anim2 4s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% { clip: rect(31px, 9999px, 94px, 0); }
+    10% { clip: rect(112px, 9999px, 76px, 0); }
+    20% { clip: rect(85px, 9999px, 5px, 0); }
+    30% { clip: rect(27px, 9999px, 115px, 0); }
+    40% { clip: rect(73px, 9999px, 29px, 0); }
+    50% { clip: rect(118px, 9999px, 142px, 0); }
+    60% { clip: rect(9px, 9999px, 55px, 0); }
+    70% { clip: rect(105px, 9999px, 88px, 0); }
+    80% { clip: rect(41px, 9999px, 32px, 0); }
+    90% { clip: rect(135px, 9999px, 64px, 0); }
+    100% { clip: rect(53px, 9999px, 120px, 0); }
+}
+
+@keyframes glitch-anim2 {
+    0% { clip: rect(76px, 9999px, 116px, 0); }
+    11% { clip: rect(43px, 9999px, 98px, 0); }
+    22% { clip: rect(122px, 9999px, 14px, 0); }
+    33% { clip: rect(9px, 9999px, 60px, 0); }
+    44% { clip: rect(89px, 9999px, 133px, 0); }
+    55% { clip: rect(22px, 9999px, 84px, 0); }
+    66% { clip: rect(138px, 9999px, 45px, 0); }
+    77% { clip: rect(79px, 9999px, 102px, 0); }
+    88% { clip: rect(12px, 9999px, 119px, 0); }
+    100% { clip: rect(95px, 9999px, 73px, 0); }
+}
+
+/* ==========================================
+   LICENSES & CERTIFICATIONS SECTION
+   ========================================== */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.cert-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.cert-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.cert-icon-wrapper {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(0, 243, 255, 0.15);
+    border-radius: 6px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.05);
+    flex-shrink: 0;
+}
+
+.cert-icon {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.cert-badge {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.7rem;
+    font-family: var(--font-mono);
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.cert-badge.active {
+    background: rgba(0, 243, 255, 0.1);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.15);
+}
+
+.cert-badge.progress {
+    background: rgba(188, 19, 254, 0.1);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    box-shadow: 0 0 10px rgba(188, 19, 254, 0.15);
+}
+
+.cert-title {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-transform: none; /* Keep natural case for names */
+    letter-spacing: 0.5px;
+}
+
+.cert-issuer {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    margin-bottom: 0.4rem;
+}
+
+.cert-meta {
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.cert-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cert-meta-item i {
+    color: var(--primary);
+    width: 16px;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.cert-id {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.cert-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 243, 255, 0.15);
+    border-color: var(--primary);
+}
+
+.cert-card.hashicorp-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(188, 19, 254, 0.15);
+    border-color: var(--accent);
+}
